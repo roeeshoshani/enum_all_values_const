@@ -13,10 +13,12 @@ pub fn derive_all_variants(input: TokenStream) -> TokenStream {
         _ => panic!("AllValues only works on enums"),
     };
 
+    let variants_amount = variants.len();
+
     let enum_name = syn_item.ident;
     let expanded = quote! {
         impl #enum_name {
-            pub const ALL_VALUES: &'static[#enum_name] = &[ #(#enum_name::#variants),* ];
+            pub const ALL_VALUES: [#enum_name; #variants_amount] = [ #(#enum_name::#variants),* ];
         }
     };
 
