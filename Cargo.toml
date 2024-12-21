@@ -1,6 +1,6 @@
 [package]
 name = "enum_all_values_const"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "a proc macro which provides access to all values of an enum even in const contexts"
 repository = "https://github.com/roeeshoshani/enum_all_values_const"
